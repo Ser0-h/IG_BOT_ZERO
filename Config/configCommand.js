@@ -1,0 +1,6 @@
+{
+  "disabled": [],
+  "aliases": {
+    "h": "help"
+  }
+}
