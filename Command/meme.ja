@@ -1,0 +1,8 @@
+module.exports = {
+  name: 'meme',
+  description: 'Get a meme (placeholder — wire up a real meme API here)',
+  restricted: false,
+  async run(ctx) {
+    await ctx.reply('😂 (plug a meme API into bot/api/request.js and use it here)');
+  },
+};
