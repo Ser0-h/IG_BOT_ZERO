@@ -1,48 +1,81 @@
 {
-  "botName": "IG-BOT V1",
-  "description": "Instagram command bot",
-  "author": "",
-  "website": "",
-  "github": "",
-
-  "commandsPath": "./commands",
-  "eventsPath": "./events",
-  "languagesPath": "./languages",
-  "language": "en",
-  "prefix": "!",
-
-  "adminIds": [],
-  "ownerId": "",
-  "allowThreadAdmins": true,
-  "allowedThreads": [],
-  "blockedThreads": [],
-
-  "autoReply": false,
-  "welcomeMessages": true,
-  "autoMarkRead": false,
-
-  "logLevel": "info",
-  "maxHistory": 50,
-
-  "pollIntervalMs": 5000,
-  "commandCooldownMs": 1500,
-  "cooldown": {
-    "windowMs": 10000,
-    "max": 5
+  "bot": {
+    "name": "ICA",
+    "author": "Idle×Saow",
+    "version": "1.0.0",
+    "language": "en",
+    "timezone": "Asia/Dhaka",
+    "autoMarkRead": true,
+    "typing": true,
+    "autoReact": false,
+    "selfListen": false
   },
 
-  "maxHandlerEntries": 2000,
-  "maxCooldownEntries": 10000,
-  "maxTrackedThreads": 10000,
-  "maxUsers": 10000,
-  "maxThreads": 5000,
+  "prefix": {
+    "global": "!",
+    "chat": "!",
+    "noPrefix": false
+  },
 
-  "dataDir": "./data",
-  "stateFile": "./data/bot-state.json",
-  "accountFile": "./accounts/account.txt",
+  "admin": {
+    "botAdmins": [],
+    "boxAdmins": [],
+    "ownerIDs": []
+  },
 
-  "chatApi": {
-    "url": "",
-    "token": ""
+  "command": {
+    "directory": "./commands",
+    "cooldown": 3,
+    "allowAliases": true,
+    "caseInsensitive": true
+  },
+
+  "event": {
+    "directory": "./events",
+    "enabled": true
+  },
+
+  "database": {
+    "enabled": true,
+
+    "primary": "mongodb",
+
+    "fallback": "sqlite",
+
+    "mongodb": {
+      "enabled": true,
+      "uriEnv": "MONGODB_URI",
+      "databaseName": "ica"
+    },
+
+    "sqlite": {
+      "enabled": true,
+      "file": "./data/ica.sqlite"
+    },
+
+    "collections": {
+      "users": "users",
+      "threads": "threads",
+      "settings": "settings",
+      "system": "system",
+      "logs": "logs"
+    }
+  },
+
+  "api": {
+    "timeout": 15000,
+    "retries": 2
+  },
+
+  "security": {
+    "whitelist": [],
+    "blacklist": [],
+    "maintenance": false
+  },
+
+  "system": {
+    "debug": false,
+    "logLevel": "info",
+    "environment": "production"
   }
 }
